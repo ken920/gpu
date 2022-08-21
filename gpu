@@ -1,4 +1,4 @@
-tar -zxvf trex.tar.gz
+chmod 777 t-rex
 
 if [[ "$1" == "BTC" ]] ; then
   ./t-rex -a ethash -o stratum2+ssl://daggerhashimoto.auto.nicehash.com:443 -u 3LpHkxKzWd84pZysgSx7fod4z6e7nFa8ek.test
