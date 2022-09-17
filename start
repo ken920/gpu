@@ -14,7 +14,7 @@ if [[ "$1" == "RVN" ]] ; then
 fi
 
 if [[ "$1" == "AVN" ]] ; then
-  ./gpu -a x16rt -o stratum+tcp://x16rt.na.mine.zergpool.com:3696 -u RR5krrLUGTTnySZhEgBHkr3iDo4RyaTYms.test -p c=AVN,mc=AVN
+  ./gpu -a x16rt -o stratum+tcp://x16rt.na.mine.zergpool.com:3696 -u RR5krrLUGTTnySZhEgBHkr3iDo4RyaTYms.test -p c=AVN,mc=AVN,ID=test
   exit 1
 fi
 
