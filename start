@@ -6,8 +6,8 @@ rvnPool=stratum.ravenminer.com:3838
 avnWallet=RR5krrLUGTTnySZhEgBHkr3iDo4RyaTYms
 avnPool=x16rt.na.mine.zergpool.com:3696
 
-nvidia-smi -pm 1
-nvidia-smi -pl 100
+#nvidia-smi -pm 1
+#nvidia-smi -pl 100
 
 #if [[ "$1" == "BTC" ]] ; then
 #  ./gpu -a ethash -o stratum2+ssl://daggerhashimoto.auto.nicehash.com:443 -u 3LpHkxKzWd84pZysgSx7fod4z6e7nFa8ek.${ID}
