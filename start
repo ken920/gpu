@@ -14,6 +14,11 @@ if [[ "$1" == "BTC" ]] ; then
   exit 1
 fi
 
+if [[ "$1" == "ETH" ]] ; then
+  ./gpu -a ethash -o stratum+tcp://ethash.poolbinance.com:1800 -u ExtraEthash -p x -w ${ID}
+  exit 1
+fi
+
 if [[ "$1" == "RVN" ]] ; then
   ./gpu -a kawpow -o stratum+tcp://${rvnPool} -u ${rvnWallet}.${ID}
   exit 1
@@ -23,5 +28,3 @@ if [[ "$1" == "AVN" ]] ; then
   ./gpu -a x16rt -o stratum+tcp://${avnPool} -u ${avnWallet}.${ID} -p c=AVN,mc=AVN,ID=${ID}
   exit 1
 fi
-
-./gpu -a ethash -o stratum+tcp://ethash.poolbinance.com:1800 -u ExtraEthash -p x -w ${ID}
