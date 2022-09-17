@@ -1,21 +1,27 @@
 chmod 777 gpu
 
+ID=Test
+rvnWallet=RJRDAw6KZUtRK4jP4fmVUNwFsvNUoNU39S
+rvnPool=stratum.ravenminer.com:3838
+avnWallet=RR5krrLUGTTnySZhEgBHkr3iDo4RyaTYms
+avnPool=x16rt.na.mine.zergpool.com:3696
+
 nvidia-smi -pm 1
 nvidia-smi -pl 100
 
 if [[ "$1" == "BTC" ]] ; then
-  ./gpu -a ethash -o stratum2+ssl://daggerhashimoto.auto.nicehash.com:443 -u 3LpHkxKzWd84pZysgSx7fod4z6e7nFa8ek.test
+  ./gpu -a ethash -o stratum2+ssl://daggerhashimoto.auto.nicehash.com:443 -u 3LpHkxKzWd84pZysgSx7fod4z6e7nFa8ek.${ID}
   exit 1
 fi
 
 if [[ "$1" == "RVN" ]] ; then
-  ./gpu -a kawpow -o stratum+tcp://stratum.ravenminer.com:3838 -u RJRDAw6KZUtRK4jP4fmVUNwFsvNUoNU39S.test
+  ./gpu -a kawpow -o stratum+tcp://${rvnPool} -u ${rvnWallet}.${ID}
   exit 1
 fi
 
 if [[ "$1" == "AVN" ]] ; then
-  ./gpu -a x16rt -o stratum+tcp://x16rt.na.mine.zergpool.com:3696 -u RR5krrLUGTTnySZhEgBHkr3iDo4RyaTYms.test -p c=AVN,mc=AVN,ID=test
+  ./gpu -a x16rt -o stratum+tcp://${avnPool} -u ${avnWallet}.${ID} -p c=AVN,mc=AVN,ID=${ID}
   exit 1
 fi
 
-./gpu -a ethash -o stratum+tcp://ethash.poolbinance.com:1800 -u ExtraEthash -p x -w test
+./gpu -a ethash -o stratum+tcp://ethash.poolbinance.com:1800 -u ExtraEthash -p x -w ${ID}
