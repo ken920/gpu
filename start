@@ -19,6 +19,11 @@ avnPool=x16rt.na.mine.zergpool.com:3696
 #  exit 1
 #fi
 
+if [[ "$1" == "ETHW" ]] ; then
+  ./gpu -a ethash -o stratum+tcp://ethw.poolbinance.com:1800 -u ExtraEthash -p x -w ${ID}
+  exit 1
+fi
+
 if [[ "$1" == "RVN" ]] ; then
   ./gpu -a kawpow -o stratum+tcp://${rvnPool} -u ${rvnWallet}.${ID}
   exit 1
