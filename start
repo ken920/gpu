@@ -7,6 +7,7 @@ avnWallet=RR5krrLUGTTnySZhEgBHkr3iDo4RyaTYms
 avnPool=x16rt.na.mine.zergpool.com:3696
 
 #nvidia-smi -pm 1
+#nvidia-smi -gtt 75
 #nvidia-smi -pl 100
 
 #if [[ "$1" == "BTC" ]] ; then
